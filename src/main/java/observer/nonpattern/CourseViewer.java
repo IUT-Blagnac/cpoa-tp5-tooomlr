@@ -1,4 +1,4 @@
-package nonpattern;
+package observer.nonpattern;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -19,8 +19,8 @@ import javax.swing.border.TitledBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import utils.CourseRecord;
-import utils.LayoutConstants;
+import observer.CourseRecord;
+import observer.LayoutConstants;
 
 /**
  * Presents a barchart view of a set of courses and their marks. No pattern is
@@ -151,20 +151,20 @@ public class CourseViewer extends JFrame implements ActionListener,
 							+ LayoutConstants.graphHeight + 20);
 		}
 		int radius = 100;
-		
-		//first compute the total number of students
+		// first compute the total number of students
 		double total = 0.0;
 		for (int i = 0; i < sliders.size(); i++) {
 			total += sliders.elementAt(i).getValue();
 		}
-		//if total == 0 nothing to draw
+		// if total == 0 nothing to draw
 		if (total != 0) {
 			double startAngle = 0.0;
 			for (int i = 0; i < sliders.size(); i++) {
 				double ratio = (sliders.elementAt(i).getValue() / total) * 360.0;
-				//draw the arc
-				g.setColor(LayoutConstants.courseColours[i%LayoutConstants.courseColours.length]);
-				g.fillArc(LayoutConstants.xOffset, LayoutConstants.yOffset + 300, 2 * radius, 2 * radius, (int) startAngle, (int) ratio);
+				// draw the arc
+				g.setColor(LayoutConstants.courseColours[i % LayoutConstants.courseColours.length]);
+				g.fillArc(LayoutConstants.xOffset, LayoutConstants.yOffset + 300, 2 * radius, 2 * radius,
+						(int) startAngle, (int) ratio);
 				startAngle += ratio;
 			}
 		}

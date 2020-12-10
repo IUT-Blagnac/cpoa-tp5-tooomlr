@@ -1,10 +1,10 @@
-package pattern;
+package observer.pattern;
 
 import java.util.Vector;
 
 import javax.swing.JOptionPane;
 
-import utils.CourseRecord;
+import observer.CourseRecord;
 
 /**
  * Represents a vector of CourseRecords.
@@ -68,7 +68,6 @@ public class CourseData extends Observable {
 	 * 
 	 * @return vector of course data
 	 */
-	@SuppressWarnings("unchecked")
 	public Vector<CourseRecord> getUpdate() {
 		return (Vector<CourseRecord>) courseData.clone();
 	}

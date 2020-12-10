@@ -1,4 +1,4 @@
-package pattern;
+package observer.pattern;
 
 /**
  * An interface for all Observers

@@ -1,4 +1,4 @@
-package pattern;
+package observer.pattern;
 
 import java.util.Vector;
 

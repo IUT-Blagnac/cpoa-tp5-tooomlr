@@ -1,4 +1,5 @@
-package utils;
+package observer;
+
 /**
  * Represents the name of a course and the number of students taking it.
  */
